@@ -1,0 +1,25 @@
+[METADATA]
+doc_id=AUR-EMAIL-007
+tenant_id=t_aurora
+sensitivity=internal
+deal_id=d_helio_sa
+[/METADATA]
+
+From: Priya Singh <priya.singh@auroracap.example>
+To: Alex Chen <alex.chen@heliorobotics.example>
+Date: 2026-02-07
+Subject: Aurora counter on Helio term sheet
+
+Hi Alex,
+
+Following up on our internal review, Aurora would be prepared to proceed at a $78M pre-money valuation.
+
+Other proposed terms from our side:
+- 1x non-participating liquidation preference
+- pro-rata participation rights
+- no board seat
+
+If this is directionally workable, please send through a revised term sheet.
+
+Best,
+Priya

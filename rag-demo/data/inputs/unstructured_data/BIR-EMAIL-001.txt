@@ -1,0 +1,20 @@
+[METADATA]
+doc_id=BIR-EMAIL-001
+tenant_id=t_birch
+sensitivity=internal
+deal_id=d_kestrel_growth
+[/METADATA]
+
+From: Mara Holt <mara.holt@birchvc.example>
+To: Alex Chen <alex.chen@kestrel.example>
+Date: 2025-10-22
+Subject: Intro and next steps
+
+Hi Alex,
+
+Good speaking today. Thanks again for making time.
+
+For the record, I have you listed as VP Sales at Kestrel Payments. I will circulate notes internally and come back with next steps after the team reviews the opportunity.
+
+Best,
+Mara

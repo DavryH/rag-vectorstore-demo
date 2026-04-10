@@ -1,0 +1,24 @@
+[METADATA]
+doc_id=AUR-MEET-002
+tenant_id=t_aurora
+sensitivity=internal
+deal_id=d_helio_sa
+[/METADATA]
+
+Meeting Title: Helio Robotics - Introductory Diligence Call
+Date: 2025-11-15
+Attendees:
+- Jordan Lee, Partner, Aurora Capital
+- Priya Singh, Associate, Aurora Capital
+- Alex Chen, CFO, Helio Robotics
+
+Helio is raising $18M in its Series A at a $90M pre-money valuation.
+
+Current topline metrics discussed on the call:
+- ARR: $4.2M
+- Main risk raised by the company: supply chain volatility for a key hardware component
+
+Alex Chen, CFO, walked through the financing process and said the data room should be ready by 2025-11-20.
+
+Notes:
+The company is moving quickly and asked for feedback on terms after Aurora reviews the initial materials.

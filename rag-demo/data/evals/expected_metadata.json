@@ -1,0 +1,169 @@
+[
+  {
+    "doc_id": "AUR-EMAIL-001",
+    "tenant_id": "t_aurora",
+    "sensitivity": "internal",
+    "doc_type": "email",
+    "date": "2025-11-12",
+    "primary_company": "Helio Robotics",
+    "deal_id": "d_helio_sa",
+    "participants": [
+      {
+        "name": "Jordan Lee",
+        "email": "jordan.lee@auroracap.example",
+        "company": "Aurora Capital",
+        "role": "Partner"
+      },
+      {
+        "name": "Alex Chen",
+        "email": "alex.chen@heliorobotics.example",
+        "company": "Helio Robotics",
+        "role": "unknown"
+      },
+      {
+        "name": "Priya Singh",
+        "email": "priya.singh@auroracap.example",
+        "company": "Aurora Capital",
+        "role": "unknown"
+      }
+    ]
+  },
+  {
+    "doc_id": "AUR-MEET-002",
+    "tenant_id": "t_aurora",
+    "sensitivity": "internal",
+    "doc_type": "meeting_notes",
+    "date": "2025-11-15",
+    "primary_company": "Helio Robotics",
+    "deal_id": "d_helio_sa",
+    "participants": [
+      {
+        "name": "Jordan Lee",
+        "email": "unknown",
+        "company": "Aurora Capital",
+        "role": "Partner"
+      },
+      {
+        "name": "Priya Singh",
+        "email": "unknown",
+        "company": "Aurora Capital",
+        "role": "Associate"
+      },
+      {
+        "name": "Alex Chen",
+        "email": "unknown",
+        "company": "Helio Robotics",
+        "role": "CFO"
+      }
+    ]
+  },
+  {
+    "doc_id": "AUR-DEAL-013",
+    "tenant_id": "t_aurora",
+    "sensitivity": "internal",
+    "doc_type": "deal_note",
+    "date": "2026-01-22",
+    "primary_company": "Northwind Bio",
+    "deal_id": "d_northwind_seed",
+    "participants": [
+      {
+        "name": "Priya Singh",
+        "email": "unknown",
+        "company": "unknown",
+        "role": "unknown"
+      }
+    ]
+  },
+  {
+    "doc_id": "BIR-EMAIL-001",
+    "tenant_id": "t_birch",
+    "sensitivity": "internal",
+    "doc_type": "email",
+    "date": "2025-10-22",
+    "primary_company": "Kestrel Payments",
+    "deal_id": "d_kestrel_growth",
+    "participants": [
+      {
+        "name": "Mara Holt",
+        "email": "mara.holt@birchvc.example",
+        "company": "unknown",
+        "role": "unknown"
+      },
+      {
+        "name": "Alex Chen",
+        "email": "alex.chen@kestrel.example",
+        "company": "Kestrel Payments",
+        "role": "VP Sales"
+      }
+    ]
+  },
+  {
+    "doc_id": "AUR-MEMO-005",
+    "tenant_id": "t_aurora",
+    "sensitivity": "confidential",
+    "doc_type": "internal_memo",
+    "date": "2026-01-20",
+    "primary_company": "Helio Robotics",
+    "deal_id": "d_helio_sa",
+    "participants": [
+      {
+        "name": "Jordan Lee",
+        "email": "unknown",
+        "company": "Helio Robotics",
+        "role": "unknown"
+      }
+    ]
+  },
+  {
+    "doc_id": "AUR-EMAIL-007",
+    "tenant_id": "t_aurora",
+    "sensitivity": "internal",
+    "doc_type": "email",
+    "date": "2026-02-07",
+    "primary_company": "Helio Robotics",
+    "deal_id": "d_helio_sa",
+    "participants": [
+      {
+        "name": "Priya Singh",
+        "email": "priya.singh@auroracap.example",
+        "company": "Aurora",
+        "role": "unknown"
+      },
+      {
+        "name": "Alex Chen",
+        "email": "alex.chen@heliorobotics.example",
+        "company": "Helio Robotics",
+        "role": "unknown"
+      }
+    ]
+  },
+  {
+    "doc_id": "AUR-EMAIL-008",
+    "tenant_id": "t_aurora",
+    "sensitivity": "internal",
+    "doc_type": "email",
+    "date": "2026-02-12",
+    "primary_company": "Helio Robotics",
+    "deal_id": "d_helio_sa",
+    "participants": [
+      {
+        "name": "Alex Chen",
+        "email": "alex.chen@heliorobotics.example",
+        "company": "Helio Robotics",
+        "role": "CFO"
+      },
+      {
+        "name": "Priya Singh",
+        "email": "priya.singh@auroracap.example",
+        "company": "unknown",
+        "role": "unknown"
+      },
+      {
+        "name": "Jordan Lee",
+        "email": "jordan.lee@auroracap.example",
+        "company": "unknown",
+        "role": "unknown"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "vector_store_id": "vs_example_replace_me",
+  "vector_store_name": "rag-demo",
+  "documents_dir": "data/outputs/01-extract-metadata/cleaned_documents",
+  "metadata_source": "data/outputs/01-extract-metadata/extractions.jsonl",
+  "source_doc_count": 7,
+  "cleared_file_count": 7,
+  "uploaded_file_count": 7,
+  "created_at": "2026-03-27T00:00:00+00:00"
+}

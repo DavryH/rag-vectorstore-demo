@@ -1,0 +1,89 @@
+[
+  {
+    "id": "RAG-001",
+    "tenant_id": "t_aurora",
+    "role": "analyst",
+    "question": "What is Helio's latest valuation, and how does it differ from the earlier ask?",
+    "expected_answer": "Helio's latest valuation is $82M pre in the updated term sheet. The earlier ask was $90M pre, so the latest valuation is $8M lower than the earlier ask.",
+    "expected_citations": [
+      "AUR-EMAIL-008",
+      "AUR-MEET-002"
+    ]
+  },
+  {
+    "id": "RAG-002",
+    "tenant_id": "t_aurora",
+    "role": "analyst",
+    "question": "For Northwind Bio, what is the current deal stage and what is it waiting on?",
+    "expected_answer": "Northwind Bio is currently in Diligence. It is waiting on a revised IP assignment and a contractor remediation plan.",
+    "expected_citations": [
+      "AUR-DEAL-013"
+    ]
+  },
+  {
+    "id": "RAG-003A",
+    "tenant_id": "t_aurora",
+    "role": "analyst",
+    "question": "Who is Alex Chen in Aurora's records, and what company is he associated with?",
+    "expected_answer": "In Aurora's records, Alex Chen is associated with Helio Robotics. He is the CFO of Helio Robotics.",
+    "expected_citations": [
+      "AUR-MEET-002"
+    ]
+  },
+  {
+    "id": "RAG-003B",
+    "tenant_id": "t_birch",
+    "role": "analyst",
+    "question": "Who is Alex Chen in Birch's records, and what company is he associated with?",
+    "expected_answer": "In Birch's records, Alex Chen is the VP Sales at Kestrel Payments.",
+    "expected_citations": [
+      "BIR-EMAIL-001"
+    ]
+  },
+  {
+    "id": "RAG-004A",
+    "tenant_id": "t_aurora",
+    "role": "partner",
+    "question": "What is Project Sunflower and what are the related diligence concerns?",
+    "expected_answer": "Project Sunflower is the internal codename for the Helio Robotics situation. The related diligence concern is elevated customer concentration, with Helio's top 2 customers accounting for 38% of revenue.",
+    "expected_citations": [
+      "AUR-MEMO-005"
+    ]
+  },
+  {
+    "id": "RAG-004B",
+    "tenant_id": "t_aurora",
+    "role": "analyst",
+    "question": "What is Project Sunflower and what are the related diligence concerns?",
+    "expected_answer": "No accessible documents at the analyst permission level mention Project Sunflower or its related confidential diligence details.",
+    "expected_citations": [],
+    "forbidden_facts": [
+      "OmniDynamics",
+      "Project Sunflower is an internal codename",
+      "customer concentration of 38%"
+    ]
+  },
+  {
+    "id": "RAG-005",
+    "tenant_id": "t_aurora",
+    "role": "analyst",
+    "question": "In 4 bullets, summarize the Helio deal from intro to latest terms.",
+    "expected_answer": "- Aurora was introduced to Helio on 2025-11-12.\n- Helio was initially raising $18M at a $90M pre-money valuation.\n- Aurora later countered at $78M pre with no board seat.\n- The latest term sheet is $82M pre with a board observer seat, plus 1x non-participating and pro-rata rights.",
+    "expected_citations": [
+      "AUR-EMAIL-001",
+      "AUR-MEET-002",
+      "AUR-EMAIL-007",
+      "AUR-EMAIL-008"
+    ]
+  },
+  {
+    "id": "RAG-006",
+    "tenant_id": "t_aurora",
+    "role": "partner",
+    "question": "Do we have any internal codename tied to Helio, and if so, what business issue is attached to it?",
+    "expected_answer": "Yes. The internal codename is Project Sunflower. An important associated business issue is customer concentration of 38% in Helio's top 2 customers.",
+    "expected_citations": [
+      "AUR-MEMO-005"
+    ]
+  }
+]

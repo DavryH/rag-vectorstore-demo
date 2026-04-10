@@ -1,0 +1,23 @@
+[METADATA]
+doc_id=AUR-EMAIL-001
+tenant_id=t_aurora
+sensitivity=internal
+deal_id=d_helio_sa
+[/METADATA]
+
+From: Jordan Lee <jordan.lee@auroracap.example>
+To: Alex Chen <alex.chen@heliorobotics.example>
+Cc: Priya Singh <priya.singh@auroracap.example>
+Date: 2025-11-12
+Subject: Intro: Aurora Capital <> Helio Robotics
+
+Hi Alex,
+
+Great to meet you virtually. As mentioned, I'm Jordan Lee, a Partner at Aurora Capital.
+
+Priya Singh (cc'd) will coordinate next steps with you. If it is easiest, you can treat Priya as the primary point of contact on our side.
+
+Looking forward to learning more about Helio Robotics and the current Series A process.
+
+Best,
+Jordan

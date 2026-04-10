@@ -1,0 +1,22 @@
+[METADATA]
+doc_id=AUR-DEAL-013
+tenant_id=t_aurora
+sensitivity=internal
+deal_id=d_northwind_seed
+[/METADATA]
+
+Deal Note
+Company: Northwind Bio
+Date: 2026-01-22
+Created by: Priya Singh
+
+Current stage: Diligence
+
+Status summary:
+Northwind Bio remains in diligence pending cleanup of outstanding legal diligence items.
+
+Open items before the deal can move forward:
+- revised IP assignment
+- contractor remediation plan
+
+No other gating items are listed in this note.
