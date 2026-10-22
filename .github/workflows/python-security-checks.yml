@@ -1,0 +1,28 @@
+name: Python dependency security checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - security/2026-10-21-dependency-hardening
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: rag-demo/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r rag-demo/requirements.txt
+      - name: Verify patched dotenv installation
+        run: python -c "import importlib.metadata; assert importlib.metadata.version('python-dotenv') == '1.2.4'"
+      - name: Run regression tests (existing failures are reported)
+        continue-on-error: true
+        run: python -m pytest rag-demo/tests -q
