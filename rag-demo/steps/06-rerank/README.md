@@ -6,6 +6,8 @@ This file implements mixed-granularity dense+sparse reranking.
 - Step 05 input is **document-level keyword candidates**.
 - Step 06 joins document-level lexical evidence onto dense chunks by `doc_id` and produces a final **chunk-level** ranking for quote extraction.
 
+**Current limitation:** This is dense-candidate reranking assisted by keyword scores, not a union of independently retrieved dense and sparse candidates. If Step 04 misses a document entirely, Step 05 cannot introduce it at Step 06.
+
 ## Expected inputs
 
 This step reads:
@@ -26,7 +28,7 @@ For each query:
 
 1. De-duplicate dense chunk candidates by `dense_candidate_id`.
 2. Build sparse document map by `doc_id` (duplicate conflicting rows fail loudly).
-3. Keep the dense scoring pool (`MAX_DENSE_CANDIDATES`) and validate sparse coverage for that scored pool.
+3. Keep the dense scoring pool (`MAX_DENSE_CANDIDATES`) and validate sparse coverage for that scored pool. An empty dense pool short-circuits the reranker even if sparse retrieval found documents.
 4. Join each dense chunk to its parent sparse document row and compute:
    - chunk semantic signal
    - parent sparse signal

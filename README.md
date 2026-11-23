@@ -2,7 +2,7 @@
 
 ## Run it locally
 
-For a reproducible setup (dependencies, env configuration, and end-to-end commands), use:
+For intended setup instructions and commands (including important compatibility caveats), use:
 
 - `QUICKSTART.md` for the runbook
 - `rag-demo/requirements.txt` as the install manifest
@@ -61,19 +61,19 @@ This matters because the retrieval layer is not only searching raw text similari
 
 Before retrieval, the system builds a query plan that keeps the original question, generates a rewritten variant, and creates a structured keyword query that separates stronger anchor terms from broader optional terms, phrases, and exclusions.
 
-The current pipeline uses the original question for dense retrieval and the structured keyword plan for sparse retrieval, while preserving the rewritten variant as an inspectable planning artifact for future tuning.
+The current pipeline uses the rewritten query for dense retrieval (falling back to the original question if the rewrite is empty), and the structured keyword plan for document-level sparse retrieval.
 
 ### 4. Retrieve with both dense and sparse search
 
 The demo uses a mixed-granularity dense+sparse retrieval and reranking pipeline.
 
-One path uses vector-store semantic retrieval over the original question to find semantically similar chunks, which helps when wording differs across documents. The other path uses document-level keyword retrieval driven by the Step 03 structured keyword plan, which helps when exact terms, named entities, or phrases are important.
+One path uses vector-store semantic retrieval over the rewritten query (or the original question as a fallback) to find semantically similar chunks, which helps when wording differs across documents. The other path uses document-level keyword retrieval driven by the Step 03 structured keyword plan, which helps when exact terms, named entities, or phrases are important.
 
-Both paths are filtered to respect the query's tenant and role context before ranking the candidates.
+Both paths apply the demo's tenant and sensitivity filters. These rules are illustrative, not a production-ready authorization policy.
 
-### 5. Rerank the combined candidate pool
+### 5. Rerank dense candidates using sparse evidence
 
-Step 06 performs chunk-level reranking with document-level lexical evidence: chunk-level semantic candidates are joined to their parent document-level keyword evidence and then refined with lightweight deterministic signals already present in the query and candidate text.
+Step 06 reranks the dense chunk candidates by joining document-level keyword scores from their parent documents, then applying lightweight deterministic signals from the query and candidate text. It does not currently add sparse-only matches to the candidate pool.
 
 This step improves the ordering of the candidate pool without turning reranking into an unconstrained reasoning phase. In practice, that means the system can better preserve the most relevant evidence for the next stage while still remaining understandable and debuggable.
 
@@ -99,7 +99,7 @@ This checks the final answer against expected outcomes, validates citations, and
 
 ### Mixed-granularity dense+sparse retrieval instead of single-method retrieval
 
-Vector-store semantic retrieval and document-level keyword retrieval fail in different ways. Using both gives the system better coverage, especially for named entities, business terminology, and questions where the user's phrasing does not match the documents exactly.
+Vector-store semantic retrieval and document-level keyword retrieval provide different ranking signals, especially for names and business terms. In the current implementation, keyword scores refine candidates already found by dense retrieval; they cannot recover a document missing from the dense results.
 
 ### Metadata-aware retrieval
 
@@ -135,3 +135,11 @@ In other words, this is meant to show practical system design for RAG, not just 
 This project is intentionally a demo rather than a full production platform.
 
 The emphasis is on clear architecture, grounded retrieval, evidence handling, and evaluation discipline. The system is broken into explicit stages so each part of the RAG pipeline can be understood, tested, and improved independently.
+
+## Known limitations
+
+- **SDK compatibility:** `rag-demo/requirements.txt` pins `openai==1.40.0`, but Step 04 calls `client.vector_stores.search()`, which is not available in that version. A clean install cannot complete the current pipeline until the SDK and API usage are updated and tested together.
+- **Destructive indexing:** Step 02 clears the selected vector store and deletes its existing OpenAI files before uploading the corpus. Use an isolated demo store; see `QUICKSTART.md`.
+- **Retrieval recall:** Sparse-only document matches cannot reach the reranker when dense retrieval misses them.
+- **Authorization:** The tenant/role filtering is a demonstration, not a fail-closed access-control policy. In particular, the current sensitivity checks do not deny `restricted` or unknown classifications by default. Do not use this implementation to protect sensitive real-world data.
+- **Evaluation:** The committed results are example snapshots over a small, seven-document/eight-query test set, not evidence of reliability across repeated runs or larger corpora.
