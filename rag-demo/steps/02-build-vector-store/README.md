@@ -4,6 +4,8 @@ This file implements the vector store build step.
 
 It reads the metadata extraction output, resolves the target OpenAI vector store, clears any files already attached to that store, and uploads the current document set with retrieval attributes derived from the extracted metadata.
 
+**Destructive operation:** Step 02 detaches existing files from the selected store and calls `client.files.delete()` on those files before uploading new ones. It reuses a matching store by name unless `RAG_VECTOR_STORE_ID` selects a specific store. Run this only against a dedicated demo store; there is no confirmation prompt.
+
 The step uses cleaned document copies when they exist. If they do not, it falls back to the original unstructured files.
 
 ## Expected inputs
