@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches:
+      - main
       - security/2026-10-21-dependency-hardening
 
 permissions:
@@ -23,6 +24,5 @@ jobs:
         run: python -m pip install -r rag-demo/requirements.txt
       - name: Verify patched dotenv installation
         run: python -c "import importlib.metadata; assert importlib.metadata.version('python-dotenv') == '1.2.4'"
-      - name: Run regression tests (existing failures are reported)
-        continue-on-error: true
+      - name: Run regression tests
         run: python -m pytest rag-demo/tests -q
